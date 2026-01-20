@@ -21,9 +21,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Log Node Version
-        run: node --version
-
       - name: Run unit tests
         run:  npm run test -- --coverage
+  style: 
+    name: Style
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check formatting
+        run: npm run format:check
 
